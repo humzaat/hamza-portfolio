@@ -59,16 +59,19 @@ body {
     align-items: center;
     background: rgba(20, 20, 50, 0.8);
     backdrop-filter: blur(10px);
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 2.5rem;
     border-radius: 50px;
     border: 1px solid rgba(99, 102, 241, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    gap: 3rem;
+    min-width: 800px;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    flex-shrink: 0;
 }
 
 .logo-circle {
@@ -77,6 +80,7 @@ body {
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid rgba(99, 102, 241, 0.3);
+    flex-shrink: 0;
 }
 
 .logo-circle img {
@@ -89,12 +93,15 @@ body {
     font-size: 1rem;
     font-weight: 600;
     color: var(--light-text);
+    white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
@@ -104,6 +111,7 @@ body {
     font-size: 0.9rem;
     transition: all 0.3s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -659,6 +667,14 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-container {
+        min-width: auto;
+        width: 100%;
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         top: 10px;
@@ -667,6 +683,8 @@ body {
 
     .nav-container {
         padding: 0.6rem 1rem;
+        min-width: auto;
+        gap: 1rem;
     }
 
     .nav-links {
@@ -681,6 +699,7 @@ body {
         padding: 2rem 0;
         border-radius: 20px;
         margin: 0 5%;
+        gap: 1.5rem;
     }
 
     .nav-links.active {
