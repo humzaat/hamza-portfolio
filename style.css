@@ -57,7 +57,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(20, 20, 50, 0.8);
+    background: rgba(20, 20, 50, 0.95);
     backdrop-filter: blur(10px);
     padding: 0.8rem 2.5rem;
     border-radius: 50px;
@@ -131,7 +131,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Hero Section - FULL SCREEN */
+/* Hero Section - FULL SCREEN with proper spacing */
 .hero {
     min-height: 100vh;
     height: 100vh;
@@ -141,7 +141,7 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, #0f0f2e 0%, #1a1a3e 50%, #2a1a4e 100%);
-    padding-top: 100px;
+    padding-top: 140px;
     padding-bottom: 100px;
 }
 
@@ -182,12 +182,14 @@ body {
     z-index: 2;
     text-align: center;
     padding: 2rem;
-    margin-bottom: 80px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero-intro {
-    text-align: left;
-    margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
 }
 
 .hero-intro p {
@@ -229,7 +231,6 @@ body {
     gap: 1.5rem;
     justify-content: center;
     margin-top: 3rem;
-    margin-bottom: 4rem;
 }
 
 .btn {
@@ -723,12 +724,17 @@ body {
     .hero {
         min-height: 100vh;
         height: 100vh;
+        padding-top: 120px;
         padding-bottom: 80px;
     }
 
     .hero-content {
-        margin-bottom: 60px;
         padding: 1rem;
+    }
+
+    .hero-intro {
+        margin-bottom: 2rem;
+        margin-top: 0;
     }
 
     .hero-name {
@@ -742,7 +748,6 @@ body {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
-        margin-bottom: 3rem;
         gap: 1rem;
     }
 
