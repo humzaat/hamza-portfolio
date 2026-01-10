@@ -128,8 +128,85 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
     padding: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Profile Image Styles */
+.hero-image {
+    flex: 0 0 auto;
+}
+
+.profile-img-wrapper {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    background: var(--gradient);
+    padding: 5px;
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.4);
+    position: relative;
+    z-index: 2;
+    animation: pulse-border 3s ease-in-out infinite;
+}
+
+@keyframes pulse-border {
+    0%, 100% {
+        box-shadow: 0 20px 60px rgba(99, 102, 241, 0.4);
+    }
+    50% {
+        box-shadow: 0 20px 80px rgba(139, 92, 246, 0.6);
+    }
+}
+
+.img-border {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    background: var(--gradient);
+    opacity: 0.3;
+    filter: blur(20px);
+    animation: rotate-border 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+    min-width: 300px;
 }
 
 .glitch {
@@ -194,14 +271,11 @@ body {
     color: var(--gray-text);
     margin: 2rem 0;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
-    justify-content: center;
     margin-top: 2rem;
 }
 
@@ -596,6 +670,20 @@ section {
 
     .burger {
         display: block;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .profile-img-wrapper {
+        width: 280px;
+        height: 280px;
     }
 
     .glitch {
